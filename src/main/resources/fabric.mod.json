@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "elementalarrows",
+  "version": "${version}",
+
+  "name": "Elemental Arrows",
+  "description": "",
+  "authors": [
+    "DanyGames2014"
+  ],
+
+  "license": "MIT",
+  "icon": "assets/elementalarrows/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "stationapi:event_bus": [
+      "net.danygames2014.elementalarrows.ElementalArrows"
+    ],
+    "stationapi:event_bus_client": [
+    ],
+    "stationapi:event_bus_server": [
+    ]
+  },
+  "mixins": [
+    "elementalarrows.mixins.json"
+  ],
+  "accessWidener": "elementalarrows.accesswidener",
+
+  "depends": {
+    "minecraft": "1.0.0-beta.7.3"
+  }
+}

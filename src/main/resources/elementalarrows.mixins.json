@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.danygames2014.elementalarrows.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BowItemMixin"
+  ],
+  "server": [
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

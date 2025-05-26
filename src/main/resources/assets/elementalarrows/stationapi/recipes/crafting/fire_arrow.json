@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "c",
+    "s",
+    "f"
+  ],
+  "key": {
+    "c": {
+      "item": "minecraft:coal"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "f": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "elementalarrows:fire_arrow",
+    "count": 2
+  }
+}

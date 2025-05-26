@@ -1,0 +1,10 @@
+accessWidener v2 named
+
+accessible field net/minecraft/entity/projectile/ArrowEntity blockX I
+accessible field net/minecraft/entity/projectile/ArrowEntity blockY I
+accessible field net/minecraft/entity/projectile/ArrowEntity blockZ I
+accessible field net/minecraft/entity/projectile/ArrowEntity blockId I
+accessible field net/minecraft/entity/projectile/ArrowEntity blockMeta I
+accessible field net/minecraft/entity/projectile/ArrowEntity inGround Z
+accessible field net/minecraft/entity/projectile/ArrowEntity life I
+accessible field net/minecraft/entity/projectile/ArrowEntity inAirTime I

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "s",
+    "f"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:ice"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "f": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "elementalarrows:ice_arrow",
+    "count": 2
+  }
+}

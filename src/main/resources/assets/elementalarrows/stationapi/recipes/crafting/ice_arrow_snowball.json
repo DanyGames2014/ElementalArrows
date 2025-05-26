@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b",
+    "s",
+    "f"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:snowball"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "f": {
+      "item": "minecraft:feather"
+    }
+  },
+  "result": {
+    "item": "elementalarrows:ice_arrow",
+    "count": 1
+  }
+}
