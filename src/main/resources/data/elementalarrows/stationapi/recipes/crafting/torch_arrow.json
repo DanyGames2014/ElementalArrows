@@ -1,13 +1,13 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "e",
+    "t",
     "s",
     "f"
   ],
   "key": {
-    "e": {
-      "item": "minecraft:egg"
+    "t": {
+      "item": "minecraft:torch"
     },
     "s": {
       "item": "minecraft:stick"
@@ -17,7 +17,7 @@
     }
   },
   "result": {
-    "item": "elementalarrows:fire_arrow",
+    "item": "elementalarrows:torch_arrow",
     "count": 1
   }
 }

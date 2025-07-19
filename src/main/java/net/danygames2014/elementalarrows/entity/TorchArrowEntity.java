@@ -4,7 +4,6 @@ import net.danygames2014.elementalarrows.ElementalArrows;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
@@ -53,8 +52,8 @@ public class TorchArrowEntity extends ElementalArrowEntity {
 
     @Override
     public boolean hitEntity(Entity entity) {
-        if (entity.damage(this.owner, 2)) {
-            entity.fireTicks = 10;
+        if (ElementalArrows.ARROW_CONFIG.torchArrowConfig.damageEntities && entity.damage(this.owner, 2)) {
+            entity.fireTicks = ElementalArrows.ARROW_CONFIG.torchArrowConfig.fireTicks;
             this.world.playSound(this, "random.drr", 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             return true;
         }

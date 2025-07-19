@@ -62,6 +62,14 @@ public class EggArrowEntity extends ElementalArrowEntity {
     }
 
     public void spawnChicken(double x, double y, double z) {
+        if (!ElementalArrows.ARROW_CONFIG.eggArrowConfig.enableChicken) {
+            return;
+        }
+        
+        if (this.random.nextInt(ElementalArrows.ARROW_CONFIG.eggArrowConfig.spawnChance) != 0){
+            return;
+        }
+        
         ChickenEntity chicken = new ChickenEntity(world);
         chicken.setPosition(x,y,z);
         world.spawnEntity(chicken);

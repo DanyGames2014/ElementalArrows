@@ -101,22 +101,30 @@ public class IceArrowEntity extends ElementalArrowEntity {
                         boolean blockDestroyed = false;
 
                         if (world.getMaterial(x, y, z) == Material.WATER && world.getBlockMeta(x, y, z) == 0) {
-                            world.setBlock(x, y, z, Block.ICE.id, 0);
-                            blockDestroyed = true;
+                            if (ElementalArrows.ARROW_CONFIG.iceArrowConfig.enableFreezingWater) {
+                                world.setBlock(x, y, z, Block.ICE.id, 0);
+                                blockDestroyed = true;
+                            }
 
                         } else if (world.getMaterial(x, y, z) == Material.LAVA && world.getBlockMeta(x, y, z) == 0) {
-                            world.setBlock(x, y, z, Block.OBSIDIAN.id, 0);
-                            blockDestroyed = true;
+                            if (ElementalArrows.ARROW_CONFIG.iceArrowConfig.enableSolidifyingLava) {
+                                world.setBlock(x, y, z, Block.OBSIDIAN.id, 0);
+                                blockDestroyed = true;
+                            }
 
                         } else if (world.getBlockId(x, y, z) == Block.FIRE.id) {
-                            world.setBlock(x, y, z, 0, 0);
-                            blockDestroyed = true;
+                            if (ElementalArrows.ARROW_CONFIG.iceArrowConfig.enableExtinguishingFire) {
+                                world.setBlock(x, y, z, 0, 0);
+                                blockDestroyed = true;
+                            }
 
                         } else if (world.getBlockId(x, y, z) == Block.TORCH.id) {
-                            Block.TORCH.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z), 1);
-                            world.setBlock(x, y, z, 0, 0);
-                            Block.TORCH.getCollisionShape(world, x, y, z);
-                            blockDestroyed = true;
+                            if (ElementalArrows.ARROW_CONFIG.iceArrowConfig.enableBreakingTorches) {
+                                Block.TORCH.dropStacks(world, x, y, z, world.getBlockMeta(x, y, z), 1);
+                                world.setBlock(x, y, z, 0, 0);
+                                Block.TORCH.getCollisionShape(world, x, y, z);
+                                blockDestroyed = true;
+                            }
                         }
 
                         if (blockDestroyed) {

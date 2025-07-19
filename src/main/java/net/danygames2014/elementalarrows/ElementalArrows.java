@@ -1,8 +1,10 @@
 package net.danygames2014.elementalarrows;
 
+import net.danygames2014.elementalarrows.config.Config;
 import net.danygames2014.elementalarrows.entity.*;
 import net.danygames2014.elementalarrows.entity.renderer.ElementalArrowEntityRenderer;
 import net.danygames2014.elementalarrows.item.ElementalArrowItem;
+import net.glasslauncher.mods.gcapi3.api.ConfigRoot;
 import net.mine_diver.unsafeevents.listener.EventListener;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Item;
@@ -25,13 +27,15 @@ public class ElementalArrows {
     @Entrypoint.Logger
     public static Logger LOGGER = Null.get();
 
+    @ConfigRoot(value = "arrow", visibleName = "Arrow")
+    public static final Config.ArrowConfig ARROW_CONFIG = new Config.ArrowConfig();
+
     public static Item explosiveArrow;
     public static Item fireArrow;
     public static Item lightingArrow;
     public static Item iceArrow;
     public static Item torchArrow;
     public static Item eggArrow;
-    
 
     @EventListener
     public void registerItems(ItemRegistryEvent event) {

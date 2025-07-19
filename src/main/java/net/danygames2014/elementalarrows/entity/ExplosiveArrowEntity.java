@@ -73,7 +73,11 @@ public class ExplosiveArrowEntity extends ElementalArrowEntity {
     }
 
     public void explode() {
-        this.world.createExplosion(this, this.x, this.y, this.z, 3.0F);
+        if(!ElementalArrows.ARROW_CONFIG.explosiveArrowConfig.enableExplosion) {
+            return;
+        }
+        
+        this.world.createExplosion(this, this.x, this.y, this.z, ElementalArrows.ARROW_CONFIG.explosiveArrowConfig.explosionPower);
     }
 
 

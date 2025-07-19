@@ -41,7 +41,9 @@ public class FireArrowEntity extends ElementalArrowEntity {
     @Override
     public boolean hitEntity(Entity entity) {
         if (entity.damage(this.owner, 2)) {
-            entity.fireTicks = 50;
+            if (ElementalArrows.ARROW_CONFIG.fireArrowConfig.enableEntityFire) {
+                entity.fireTicks = ElementalArrows.ARROW_CONFIG.fireArrowConfig.fireTicks;
+            }
             this.world.playSound(this, "random.drr", 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
             return true;
         }
@@ -72,7 +74,9 @@ public class FireArrowEntity extends ElementalArrowEntity {
         }
 
         if (world.isAir(x, y, z)) {
-            world.setBlock(x, y, z, Block.FIRE.id);
+            if (ElementalArrows.ARROW_CONFIG.fireArrowConfig.enableBlockFire) {
+                world.setBlock(x, y, z, Block.FIRE.id);
+            }
             return true;
         }
         return false;

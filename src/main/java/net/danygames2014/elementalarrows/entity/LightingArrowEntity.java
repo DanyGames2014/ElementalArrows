@@ -36,7 +36,9 @@ public class LightingArrowEntity extends ElementalArrowEntity {
     }
 
     public void summonLighting() {
-        world.spawnGlobalEntity(new LightningEntity(world, this.x, this.y, this.z));
+        if (ElementalArrows.ARROW_CONFIG.lightningArrowConfig.enableLightning) {
+            world.spawnGlobalEntity(new LightningEntity(world, this.x, this.y, this.z));
+        }
     }
 
     @Override
