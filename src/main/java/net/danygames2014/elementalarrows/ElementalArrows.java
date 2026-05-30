@@ -12,12 +12,11 @@ import net.minecraft.util.math.BlockPos;
 import net.modificationstation.stationapi.api.client.event.render.entity.EntityRendererRegisterEvent;
 import net.modificationstation.stationapi.api.dispenser.DispenseEvent;
 import net.modificationstation.stationapi.api.dispenser.ItemDispenseContext;
-import net.modificationstation.stationapi.api.event.entity.EntityRegister;
+import net.modificationstation.stationapi.api.event.entity.EntityRegisterEvent;
 import net.modificationstation.stationapi.api.event.registry.EntityHandlerRegistryEvent;
 import net.modificationstation.stationapi.api.event.registry.ItemRegistryEvent;
 import net.modificationstation.stationapi.api.mod.entrypoint.Entrypoint;
 import net.modificationstation.stationapi.api.util.Namespace;
-import net.modificationstation.stationapi.api.util.Null;
 import org.apache.logging.log4j.Logger;
 
 public class ElementalArrows {
@@ -25,7 +24,7 @@ public class ElementalArrows {
     public static Namespace NAMESPACE;
 
     @Entrypoint.Logger
-    public static Logger LOGGER = Null.get();
+    public static Logger LOGGER;
 
     @ConfigRoot(value = "arrow", visibleName = "Arrow")
     public static final Config.ArrowConfig ARROW_CONFIG = new Config.ArrowConfig();
@@ -48,13 +47,13 @@ public class ElementalArrows {
     }
 
     @EventListener
-    public void registerEntities(EntityRegister event) {
-        event.register(ExplosiveArrowEntity.class, NAMESPACE.id("explosive_arrow").toString());
-        event.register(FireArrowEntity.class, NAMESPACE.id("fire_arrow").toString());
-        event.register(LightingArrowEntity.class, NAMESPACE.id("lighting_arrow").toString());
-        event.register(IceArrowEntity.class, NAMESPACE.id("ice_arrow").toString());
-        event.register(TorchArrowEntity.class, NAMESPACE.id("torch_arrow").toString());
-        event.register(EggArrowEntity.class, NAMESPACE.id("egg_arrow").toString());
+    public void registerEntities(EntityRegisterEvent event) {
+        event.register(NAMESPACE.id("explosive_arrow"), ExplosiveArrowEntity.class);
+        event.register(NAMESPACE.id("fire_arrow"), FireArrowEntity.class);
+        event.register(NAMESPACE.id("lighting_arrow"), LightingArrowEntity.class);
+        event.register(NAMESPACE.id("ice_arrow"), IceArrowEntity.class);
+        event.register(NAMESPACE.id("torch_arrow"), TorchArrowEntity.class);
+        event.register(NAMESPACE.id("egg_arrow"), EggArrowEntity.class);
     }
 
     @EventListener
